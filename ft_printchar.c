@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelvign <gdelvign@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/16 11:08:17 by gdelvign          #+#    #+#             */
+/*   Created: 2023/11/02 09:38:11 by gdelvign          #+#    #+#             */
 /*   Updated: 2024/01/16 10:23:11 by gdelvign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+size_t	ft_printchar(va_list lst, size_t *counter)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	char		value;
+
+	value = (int)va_arg(lst, int);
+	if (!value)
+		return (EXIT_FAILURE);
+	if (ft_putchar(value, counter))
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
 }

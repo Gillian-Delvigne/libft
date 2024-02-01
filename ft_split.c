@@ -6,7 +6,7 @@
 /*   By: gdelvign <gdelvign@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 14:15:52 by gdelvign          #+#    #+#             */
-/*   Updated: 2023/10/20 13:13:29 by gdelvign         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:23:11 by gdelvign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,28 @@ static size_t	ft_get_substr_len(char const *s, char c)
 	size_t	len;
 
 	len = 0;
-	while (s[len] && s[len] != c)
+	while (*s && *s != c)
+	{
 		len++;
+		s++;
+	}
 	return (len);
 }
 
 static size_t	ft_count_substrs(char const *str, char c)
 {
-	size_t	i;
 	size_t	counter;
 
-	i = 0;
 	counter = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] != c)
+		if (*str != c)
 		{
 			counter++;
-			while (str[i] && str[i] != c)
-				i++;
+			str += ft_get_substr_len(str, c);
 		}
 		else
-			i++;
+			str++;
 	}
 	return (counter);
 }

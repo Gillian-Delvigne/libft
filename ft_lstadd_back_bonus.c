@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdelvign <gdelvign@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 12:02:28 by gdelvign          #+#    #+#             */
-/*   Updated: 2023/10/24 12:40:57 by gdelvign         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:23:11 by gdelvign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	if (ft_lstsize(*lst))
 		ft_lstlast(*lst)->next = new;
-	else 
+	else
 		*lst = new;
 }

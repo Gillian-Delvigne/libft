@@ -6,7 +6,7 @@
 /*   By: gdelvign <gdelvign@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 14:34:24 by gdelvign          #+#    #+#             */
-/*   Updated: 2023/10/26 09:57:27 by gdelvign         ###   ########.fr       */
+/*   Updated: 2024/01/15 20:30:06 by gdelvign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+# include <stdarg.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+// ----- LIBFT ----- //
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -52,13 +60,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -68,5 +69,35 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// ----- PRINTF ----- //
+int		ft_printf(const char *s, ...);
+size_t	ft_putchar(char c, size_t *counter);
+size_t	ft_putstr(char *str, size_t *counter);
+size_t	ft_putnbr(int nb, size_t *counter);
+size_t	ft_putuint(unsigned int nb, size_t *counter);
+size_t	ft_putaddress(void *ptr, size_t *counter);
+size_t	ft_putnbrbase(unsigned int nb, char *base, size_t *counter);
+size_t	ft_putulong(unsigned long long nb, char *base, size_t *counter);
+size_t	ft_printchar(va_list lst, size_t *counter);
+size_t	ft_printstr(va_list lst, size_t *counter);
+size_t	ft_printnbr(va_list lst, size_t *counter);
+size_t	ft_printuint(va_list lst, size_t *counter);
+size_t	ft_printaddress(va_list lst, size_t *counter);
+size_t	ft_printhex(va_list lst, size_t *counter, char flag);
+
+// ----- GNL ----- //
+char	*get_next_line(int fd);
+size_t	ft_find_endline(char *s);
+size_t	ft_strlen(const char *str);
+char	*ft_strjoin_gnl(char *bucket, char *buffer);
+char	*free_elem(char **elem1, char **elem2);
+
+# define HEX_BASE_LOW "0123456789abcdef"
+# define HEX_BASE_UP "0123456789ABCDEF"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
 
 #endif

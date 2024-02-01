@@ -6,7 +6,7 @@
 /*   By: gdelvign <gdelvign@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:43:27 by gdelvign          #+#    #+#             */
-/*   Updated: 2023/10/25 14:11:13 by gdelvign         ###   ########.fr       */
+/*   Updated: 2024/01/16 10:23:11 by gdelvign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	*ft_fillstr(char *str, size_t len, int nb)
 		}
 		str[0] = '-';
 	}
-	else 
+	else
 	{
 		while (nb)
 		{
