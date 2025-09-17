@@ -1,6 +1,6 @@
 # Libft - 42 School Project
 
-**Libft** is the first project in the 42 School curriculum's "Common Core." Its objective is to recreate a series of standard C library functions from scratch. This project serves as a fundamental building block for future projects, as instead of relying on the standard C library, we will use our own implementation – **libft**. Through this, we will gain a deep understanding of how these functions work under the hood and become comfortable with low-level programming concepts.
+**Libft** is the first project in the 42 School curriculum's "Common Core." Its objective is to recreate a series of standard C library functions (including basic string, memory, and I/O operations) **from scratch**. This project acts as a fundamental building block for later projects, since students must rely on their own implementation (libft) rather than the standard C library. Through this exercise, we gained a deep understanding of how these functions work under the hood and became comfortable with low-level programming concepts.
 
 ## Overview
 
