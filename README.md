@@ -141,8 +141,4 @@ int main(void)
 
 In this example, we use `ft_strdup` to duplicate a string, and `ft_putstr_fd` and `ft_putchar_fd` to print it to standard output.
 
-## Conclusion
-
-**Libft** is a critical project that lays the foundation for understanding how many fundamental C library functions work. By writing these functions from scratch, you'll gain a deep insight into memory management, pointer arithmetic, and efficient data manipulation, which will be invaluable for future projects at 42 and beyond.
-
 Feel free to clone the repository and adapt the library for your own projects!
